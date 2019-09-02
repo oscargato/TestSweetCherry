@@ -1,0 +1,78 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-2">
+			<img src="../../../assets/img/sweetcherry.png" alt="" width="100px" height="80px">	
+		</div>
+		<div class="col-md-10 text-left">
+			<h1>Symbol Detail</h1>
+		</div>
+	</div>
+
+	<div class="row mt-5">
+		<table class="table">
+			<tbody>
+			    <tr>
+		      		<td>Symbol</td>
+		      		<td>{{ symbolModel.symbol }}</td>
+		      		<td>Region</td>
+		      		<td>{{ symbolModel.region }}</td>
+		      		<td>Bid</td>
+		      		<td>{{ symbolModel.bid }}</td>
+			    </tr>
+
+			    <tr>
+		      		<td>Regular Market Change %</td>
+		      		<td>{{ symbolModel.regularMarketChangePercent }}</td>
+		      		<td>Currency</td>
+		      		<td>{{ symbolModel.currency }}</td>
+		      		<td>Ask</td>
+		      		<td>{{ symbolModel.ask }}</td>
+			    </tr>
+
+			    <tr>
+		      		<td>Regular Market Price</td>
+		      		<td>{{ symbolModel.regularMarketPrice }}</td>
+		      		<td>Long Name</td>
+		      		<td>{{ symbolModel.longName }}</td>
+		      		<td>Bid Size</td>
+		      		<td>{{ symbolModel.bidSize }}</td>
+			    </tr>
+
+			    <tr>
+		      		<td>Regular Market Time</td>
+		      		<td>{{ symbolModel.regularMarketTime }}</td>
+		      		<td>Full Exchange Name</td>
+		      		<td>{{ symbolModel.fullExchangeName }}</td>
+		      		<td>Ask Size</td>
+		      		<td>{{ symbolModel.askSize }}</td>
+			    </tr>			    
+		  	</tbody>
+		</table>
+	</div>
+
+	<div class="row mt-5">
+		<h3>Low/High Historical</h3>
+		<table class="table">
+			<thead>
+			    <tr>
+			      	<th scope="col">#</th>
+			      	<th scope="col">Date</th>
+			      	<th scope="col">Low</th>
+			      	<th scope="col">High</th>
+			    </tr>
+			</thead>
+		  	<tbody>
+		    	<tr *ngFor="let d of dateHistorical; let i = index">
+		      		<td>{{ i + 1 }}</td>
+		      		<td>{{ d }}</td>
+		      		<td>C</td>
+		      		<td>D</td>
+		    	</tr>
+		  	</tbody>
+		</table>
+	</div>
+
+	<div class="row mt-5">
+		<button type="button" class="btn btn-primary">Primary</button>
+	</div>
+</div>

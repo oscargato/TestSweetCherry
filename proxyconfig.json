@@ -1,0 +1,7 @@
+{
+    "/v7/": {
+        "target": "https://query1.finance.yahoo.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
