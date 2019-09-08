@@ -15,6 +15,6 @@ export class SymbolModel {
 	region:string;
 	regularMarketChangePercent:number;
 	regularMarketPrice:number;
-	regularMarketTime:number;
+	regularMarketTime:string;
 	symbol:string;
 }

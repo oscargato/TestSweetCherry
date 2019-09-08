@@ -64,15 +64,15 @@
 		  	<tbody>
 		    	<tr *ngFor="let d of dateHistorical; let i = index">
 		      		<td>{{ i + 1 }}</td>
-		      		<td>{{ d }}</td>
-		      		<td>C</td>
-		      		<td>D</td>
+		      		<td>{{ d.date }}</td>
+		      		<td>{{ d.low }}</td>
+		      		<td>{{ d.high }}</td>
 		    	</tr>
 		  	</tbody>
 		</table>
 	</div>
 
 	<div class="row mt-5">
-		<button type="button" class="btn btn-primary">Primary</button>
+		<button type="button" class="btn btn-primary" (click)="back()">Atras</button>
 	</div>
 </div>

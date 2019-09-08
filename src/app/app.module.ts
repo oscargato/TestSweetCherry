@@ -9,6 +9,8 @@ import { SymbolListaComponent } from './components/symbol-lista/symbol-lista.com
 import { SymbolService } from './services/symbol.service';
 import { NgbModal, ModalDismissReasons, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SymbolDetailComponent } from './components/symbol-detail/symbol-detail.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { SymbolDetailComponent } from './components/symbol-detail/symbol-detail.
         preventDuplicates:true,
     }),
     NgbModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     SymbolService,
