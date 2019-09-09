@@ -16,6 +16,7 @@ export class SymbolListaComponent implements OnInit {
 
   private bsModalRef:BsModalRef;
   private symbolModel:SymbolModel = new SymbolModel();
+  private symbols:SymbolModel[]=[]; 
 
   constructor(private symbolService:SymbolService, 
               private ngbModal:NgbModal,
@@ -24,6 +25,7 @@ export class SymbolListaComponent implements OnInit {
               private bsModalService:BsModalService){}
 
   ngOnInit() {
+    this.symbols = this.symbolService.getSymbols();
   }
 
   public openModal(template:TemplateRef<any>){
@@ -31,22 +33,23 @@ export class SymbolListaComponent implements OnInit {
   }
   
   public addSymbol(symb:string){
-    console.log(symb);
     this.symbolService.getSymbol(symb).subscribe(resp=>{
-      this.symbolModel.ask = resp.ask;
-      this.symbolModel.askSize = resp.askSize;
-      this.symbolModel.bid = resp.bid;
-      this.symbolModel.bidSize = resp.bidSize;
-      this.symbolModel.currency = resp.currency;
-      this.symbolModel.fullExchangeName = resp.fullExchangeName;
-      this.symbolModel.longName = resp.longName;
-      this.symbolModel.region = resp.region;
       this.symbolModel.regularMarketChangePercent = resp.regularMarketChangePercent;
       this.symbolModel.regularMarketPrice = resp.regularMarketPrice;
       this.symbolModel.regularMarketTime = moment.unix(resp.regularMarketTime).format('MM/DD/YYYY');
       this.symbolModel.symbol = resp.symbol;
-      console.log(resp);
+      this.symbolService.addSymb(this.symbolModel);
     });
     this.bsModalRef.hide();
+  }
+
+  public deleteSymbol(symb:string){
+    if(confirm('Desea eliminar el Simbolo???')){
+      this.symbolService.deleteSymb(symb);  
+    }
+  }
+
+  public viewSymbol(symb:string){
+     this.router.navigate(['/details/'+symb]);
   }
 }

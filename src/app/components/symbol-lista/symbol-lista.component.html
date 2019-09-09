@@ -40,18 +40,18 @@
 					</thead>
 
 					<tbody>
-						<tr class="text-center">
-			  				<td>A</td>
-			  				<td>B</td>
-			  				<td>C</td>
-			  				<td>D</td>
-			  				<td>E</td>
+						<tr *ngFor="let s of symbols; let i = index" class="text-center">
+			  				<td>{{ i + 1 }}</td>
+			  				<td>{{ s.symbol }}</td>
+			  				<td>{{ s.regularMarketChangePercent }}</td>
+			  				<td>{{ s.regularMarketPrice }}</td>
+			  				<td>{{ s.regularMarketTime }}</td>
 			  				<td>
-			  					<a class="btn btn-light" (click)="editSymbol(item)">
+			  					<a class="btn btn-light" (click)="viewSymbol(symbols[i].symbol)">
 									<i class="fa fa-eye"></i>
 								</a>
 									
-								<a class="btn btn-light" (click)="deleteSymbol(item)">
+								<a class="btn btn-light" (click)="deleteSymbol(symbols[i].symbol)">
 									<i class="fa fa-trash" aria-hidden="true"></i> 
 								</a>
 			  				</td>
